@@ -1,0 +1,40 @@
+﻿<Window x:Class="LoadingAnimation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        Title="MainWindow" Height="350" Width="525">
+
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="25"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+        </Style>
+        <Style TargetType="StackPanel">
+            <Setter Property="Orientation" Value="Horizontal"></Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+
+        <DataGrid Margin="5,10,15,10" Grid.Row="1" Grid.Column="0" AutoGenerateColumns="False" CanUserAddRows="False" Name="clientsGrig" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*"  Header="Фамилия" Binding="{Binding Path=LastName}"/>
+                <DataGridTextColumn Width="*"  Header="Имя" Binding="{Binding Path=FirstName}"/>
+                <DataGridTextColumn Width="*"  Header="Отчество" Binding="{Binding Path=FathertName}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid Name="loadAnimation" Grid.RowSpan="2" Background="White" Opacity="0.7" Visibility="Hidden">
+            <Image  HorizontalAlignment="Center" VerticalAlignment="Center"
+               gif:ImageBehavior.AutoStart="True" gif:ImageBehavior.AnimatedSource="Images/loading45.gif"/>
+        </Grid>
+    </Grid>
+</Window>
