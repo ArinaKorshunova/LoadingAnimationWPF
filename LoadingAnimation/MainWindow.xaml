@@ -4,20 +4,6 @@
         xmlns:gif="http://wpfanimatedgif.codeplex.com"
         Title="MainWindow" Height="350" Width="525">
 
-    <Window.Resources>
-        <Style TargetType="TextBox">
-            <Setter Property="Height" Value="25"></Setter>
-            <Setter Property="VerticalAlignment" Value="Center"></Setter>
-            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
-        </Style>
-        <Style TargetType="Label">
-            <Setter Property="FontWeight" Value="Bold"></Setter>
-        </Style>
-        <Style TargetType="StackPanel">
-            <Setter Property="Orientation" Value="Horizontal"></Setter>
-        </Style>
-    </Window.Resources>
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
